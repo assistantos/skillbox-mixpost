@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 32" fill="none">
+  <!-- Placeholder Skillbox Logo - replace with actual logo -->
+  <rect width="32" height="32" rx="6" fill="#2891b9"/>
+  <text x="8" y="22" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="white">S</text>
+  <text x="40" y="23" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#333">Skillbox</text>
+</svg>

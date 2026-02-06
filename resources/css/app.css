@@ -1,5 +1,6 @@
 @import './fonts.css' layer(base);
 @import './custom.css';
+@import './skillbox-theme.css';
 
 @import 'tailwindcss';
 

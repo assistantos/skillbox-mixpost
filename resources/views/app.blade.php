@@ -13,5 +13,8 @@
 </head>
 <body class="font-sans">
 @inertia
+<script src="{{ asset('vendor/mixpost/skillbox-assistant-bridge.js') }}"
+        data-api="{{ env('SKILLBOX_API_URL', 'http://localhost:3001') }}"
+        data-tenant="{{ env('SKILLBOX_TENANT', 'dev') }}"></script>
 </body>
 </html>

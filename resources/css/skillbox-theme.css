@@ -1,0 +1,77 @@
+/*
+ * Skillbox Theme for Mixpost
+ *
+ * Overrides Mixpost's default Tailwind CSS v4 theme variables
+ * to match Skillbox branding. This file is imported in app.css.
+ *
+ * The indigo color palette is Mixpost's primary color used for
+ * buttons, active states, links, and accents throughout the UI.
+ */
+
+@theme {
+    /* Skillbox Primary Color Palette
+     * Replace these with your actual Skillbox brand colors.
+     * The indigo scale is used throughout Mixpost for:
+     *   - Buttons (indigo-500, indigo-600 hover)
+     *   - Active navigation items
+     *   - Links and accents
+     *   - Focus rings
+     */
+    --color-indigo-50:  #e8f4f8;
+    --color-indigo-100: #d1e9f1;
+    --color-indigo-200: #a3d3e3;
+    --color-indigo-300: #75bdd5;
+    --color-indigo-400: #47a7c7;
+    --color-indigo-500: #2891b9;
+    --color-indigo-600: #207494;
+    --color-indigo-700: #18576f;
+    --color-indigo-800: #103a4a;
+    --color-indigo-900: #081d25;
+}
+
+/* Skillbox Logo Override
+ * Replaces the Mixpost logo in the sidebar with the Skillbox logo.
+ * Targets the Logo component rendered in the sidebar.
+ */
+.sidebar-logo img,
+.sidebar-logo svg,
+[class*="logo"] img,
+[class*="logo"] svg {
+    content: url('/img/skillbox-logo.svg');
+    max-height: 28px;
+    width: auto;
+}
+
+/* Assistant Bridge Button Styling
+ * Ensures the Skillbox Assistant button integrates visually
+ * with Mixpost's existing editor toolbar buttons.
+ */
+.skillbox-assistant-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-indigo-700);
+    background-color: var(--color-indigo-50);
+    border: 1px solid var(--color-indigo-200);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.skillbox-assistant-btn:hover {
+    background-color: var(--color-indigo-100);
+    border-color: var(--color-indigo-300);
+    color: var(--color-indigo-800);
+}
+
+.skillbox-assistant-btn:active {
+    background-color: var(--color-indigo-200);
+}
+
+.skillbox-assistant-btn .icon {
+    width: 16px;
+    height: 16px;
+}

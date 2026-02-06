@@ -32,6 +32,10 @@ use Inovector\Mixpost\Http\Controllers\SettingsController;
 use Inovector\Mixpost\Http\Controllers\TagsController;
 use Inovector\Mixpost\Http\Middleware\Auth as MixpostAuthMiddleware;
 use Inovector\Mixpost\Http\Middleware\HandleInertiaRequests;
+use App\Http\Controllers\SkillboxSsoController;
+
+// Skillbox SSO Login (no auth middleware - token-based)
+Route::get('/auth/skillbox', [SkillboxSsoController::class, 'login']);
 
 Route::middleware([
     'web',
