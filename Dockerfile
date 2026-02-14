@@ -17,6 +17,7 @@ COPY resources/dist/vendor/mixpost/skillbox-logo.svg /var/www/html/public/vendor
 # Copy modified source files
 COPY resources/js/Services/emitter.js /var/www/html/resources/js/Services/
 COPY resources/views/app.blade.php /var/www/html/resources/views/
+COPY resources/views/skillbox-sso-redirect.blade.php /var/www/html/resources/views/
 COPY resources/css/skillbox-theme.css /var/www/html/resources/css/
 COPY resources/css/app.css /var/www/html/resources/css/
 COPY routes/web.php /var/www/html/routes/
