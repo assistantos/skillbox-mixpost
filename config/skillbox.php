@@ -3,14 +3,27 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Skillbox API URL
+    | Skillbox API URL (Server-to-Server)
     |--------------------------------------------------------------------------
     |
-    | The base URL of the Skillbox backend API. Used for SSO token validation
-    | and communication between Mixpost and Skillbox.
+    | The base URL of the Skillbox backend API for server-side communication.
+    | Used by SkillboxSsoController for token validation (container-to-container).
+    | Must be set via SKILLBOX_API_URL environment variable.
     |
     */
-    'api_url' => env('SKILLBOX_API_URL', 'http://localhost:3001'),
+    'api_url' => env('SKILLBOX_API_URL'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Skillbox Browser URL (Client-Side)
+    |--------------------------------------------------------------------------
+    |
+    | The URL that the user's browser uses to reach Skillbox.
+    | Used by the Bridge-Script (runs in user's browser, not in Docker).
+    | Must be set via SKILLBOX_BROWSER_URL environment variable.
+    |
+    */
+    'browser_url' => env('SKILLBOX_BROWSER_URL'),
 
     /*
     |--------------------------------------------------------------------------
@@ -21,5 +34,5 @@ return [
     | Used by the Bridge-Script to identify the Skillbox tenant.
     |
     */
-    'tenant' => env('SKILLBOX_TENANT', 'dev'),
+    'tenant' => env('SKILLBOX_TENANT', 'default'),
 ];
