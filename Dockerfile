@@ -16,7 +16,7 @@ COPY resources/dist/vendor/mixpost/skillbox-logo.svg /var/www/html/public/vendor
 
 # Copy modified source files
 COPY resources/js/Services/emitter.js /var/www/html/resources/js/Services/
-COPY resources/views/app.blade.php /var/www/html/resources/views/
+COPY resources/views/app.blade.php /var/www/html/resources/views/vendor/mixpost/app.blade.php
 COPY resources/views/skillbox-sso-redirect.blade.php /var/www/html/resources/views/
 COPY resources/css/skillbox-theme.css /var/www/html/resources/css/
 COPY resources/css/app.css /var/www/html/resources/css/
@@ -33,5 +33,6 @@ RUN chown -R www-data:www-data /var/www/html/app/Http/Controllers/SkillboxSsoCon
     /var/www/html/public/vendor/mixpost/skillbox-logo.svg \
     && chmod +x /var/www/startup/create_env.sh
 
-# Clear config cache so env vars are read fresh on startup
+# Clear caches so env vars and views are read fresh on startup
 RUN php artisan config:clear 2>/dev/null || true
+RUN php artisan view:clear 2>/dev/null || true
